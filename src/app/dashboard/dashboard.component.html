@@ -1,0 +1,148 @@
+<app-header></app-header>
+<div class="dashboard-page">
+  <div class="dashboard-head-img">
+    <div class="home-bg-overlay" style="background: rgba(0,0,0,0.4);">
+      <div id="sticky_header" class="ui sticky">
+        <header class="header" id="header">
+          <div id="login-navigation" class="login__container right">
+            <div class="header-link">
+              <div class="button-row">
+              </div>
+              <button mat-button class="lg-h-btn">Login</button>
+              <button mat-stroked-button isRoundButton="true" class="c-account-btn" color="primary">
+                Create Account
+              </button>
+            </div>
+          </div>
+        </header>
+      </div>
+      <div class="h-city-main p-relative" id="zimagery-container" style="color: #929292;">
+        <div class="logo-home">
+          <img class="menu-logo" src="assets/imgs/homeLogo.png">
+        </div>
+        <div class="home-location-section">
+          <div class="home-location-wrapper">
+            <div class="home-suggestion-message">
+              <h2>Please Select Nearest Location</h2>
+            </div>
+            <div class="home-form-wrapper">
+              <form>
+                <mat-form-field>
+                  <mat-select placeholder="" [(ngModel)]="selectedValue" panelClass="example-panel-red" name="food">
+                    <mat-option *ngFor="let food of foods" [value]="food.value">
+                      {{food.viewValue}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <!--  <p> Selected value: {{selectedValue}} </p> -->
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-conainer">
+    <div class="container-fluid">
+      <div class="home-count-message">
+        WELCOME TO FRANGO
+      </div>
+      <div class="home-welcome-message">
+        For Chicken Lovers
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="menu-wrapper">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12" *ngFor="let key of favKeys">
+          <div class="image-home-content" (click)="favouriteClick($event,key)">
+            <div class="home-bg-menu" [ngStyle]="{'background-image':'url('+favourites[key].image+')'}">
+            </div>
+            <div class="image-con-header">
+              <div>{{favourites[key].mt}}</div>
+            </div>
+            <div class="image-con-message">
+              {{favourites[key].htext}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="order-wrapper">
+      <div class="order-text-wrapper">
+        <h1 class="h-o-text">HOW TO ORDER?</h1>
+        <h6 class="h-o-text f-stps">Follow the Steps</h6>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="process-wrapper">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+          <div calss="step-wrapper" style="text-align: center;">
+	            <div class="order-img-block">
+	              <i class="material-icons md-c">
+					settings_input_antenna
+			  </i>
+	            </div>
+	            <div class="number-blk">
+	              <h3 style="padding-top:10px">1</h3>
+	            </div>
+	            <div class="o-text">
+		            <h6 style="padding-top:30px">Choose Your Location</h6>
+		        </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+        	<div calss="step-wrapper" style="text-align: center;">
+		          <div class="order-img-block">
+		            <i class="material-icons md-c">
+						restaurant
+					</i>
+		          </div>
+		          <div class="number-blk">
+		            <h3 style="padding-top:10px">2</h3>
+		          </div>
+		           <div class="o-text">
+		            <h6 style="padding-top:30px">Choose restaurant</h6>
+		           </div>
+
+        	</div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+        	<div calss="step-wrapper" style="text-align: center;">
+		          <div class="order-img-block">
+		            <i class="material-icons md-c">
+						fastfood
+					</i>
+		          </div>
+		          <div class="number-blk">
+		            <h3 style="padding-top:10px">3</h3>
+		          </div>
+		          <div class="o-text">
+		            <h6 style="padding-top:30px">Make your order</h6>
+		           </div>
+        	</div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+        	<div calss="step-wrapper" style="text-align: center;">
+		          <div class="order-img-block">
+		            <i class="material-icons md-c">
+						directions_bike
+				  </i>
+		          </div>
+		          <div class="number-blk">
+		            <h3 style="padding-top:10px">4</h3>
+		          </div>
+		          <div class="o-text">
+		            <h6 style="padding-top:30px">Food is on the way</h6>
+		           </div>
+        	</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
